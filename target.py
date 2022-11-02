@@ -15,7 +15,7 @@ def generate_grid() -> List[List[str]]:
     e.g. [['I', 'G', 'E'], ['P', 'I', 'S'], ['W', 'M', 'G']]
     """
     random_list = []
-    alp = string.ascii_uppercase
+    alp = string.ascii_lowercase
     for i in range(3):
         in_list = []
         for j in range(3):
@@ -44,8 +44,14 @@ def get_user_words() -> List[str]:
     for Windows.
     Note: the user presses the enter key after entering each word.
     """
-    pass
-
+    input_words = []
+    letter = 'f'
+    while letter != '':
+        letter = input()
+        if letter == '':
+            break
+        input_words.append(letter)
+    return input_words
 
 def get_pure_user_words(user_words: List[str], letters: List[str], words_from_dict: List[str]) -> List[str]:
     """
