@@ -73,6 +73,18 @@ def get_pure_user_words(user_words: List[str],
     that are not in dictionary.
     """
     answer_list = []
+    for word in user_words:
+        if (not letters[4] in word or len(word) <= 3 or
+            word.lower() in words_from_dict or word.capitalize() in words_from_dict):
+            continue
+        bad_counter = 0
+        for letter in word:
+            if word.count(letter) > letters.count(letter):
+                bad_counter += 1
+            else:
+                continue
+        if bad_counter == 0:
+            answer_list.append(word)
     return answer_list
 
 def results():
